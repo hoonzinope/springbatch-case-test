@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.testDB.mapper.PlainTextMapper">
+    <select id="getAll" resultType="map">
+        SELECT * FROM plain_text WHERE 1=1 ;
+    </select>
+
+    <select id="getPaging" resultType="map">
+        SELECT * FROM plain_text WHERE 1=1 order by id LIMIT #{_skiprows}, #{_pagesize} ;
+    </select>
+
+    <insert id="putText" parameterType="map">
+        INSERT INTO plain_text (text) values (#{text});
+    </insert>
+</mapper>
